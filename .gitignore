@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 .env
+
+#awskey
+daikadai3-key.pem

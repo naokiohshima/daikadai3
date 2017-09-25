@@ -5,7 +5,7 @@ set :application, 'daikadai3'
 
 set :repo_url, 'https://github.com/naokiohshima/daikadai3'
 
-deployするブランチ。デフォルトはmasterなのでなくても可。
+#deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
 
 # deploy先のディレクトリ。

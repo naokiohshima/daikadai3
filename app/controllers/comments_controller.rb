@@ -22,6 +22,33 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+   @comment = Comment.find(params[:id])
+   @blog = @comment.blog
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @blog = @comment.blog
+    if @comment.update(comment_params)
+      redirect_to blogs_path, notice: "コメントを更新しました！"
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      if @comment.destroy
+        format.html { redirect_to blog_path(@comment), notice: 'コメントを削除しました。' }
+        format.js { render :index }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
   private
     # ストロングパラメーター
     def comment_params

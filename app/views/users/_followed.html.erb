@@ -1,0 +1,8 @@
+<p>フォロワーの情報</p>
+<p>
+  <% @user.followed_users.each do |f| %>
+  　<%= profile_img(f) %>
+    <%= f.name %>
+    <%= f.email %>
+  <% end %>
+</p>

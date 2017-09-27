@@ -22,12 +22,12 @@ Rails.application.routes.draw do
    omniauth_callbacks: "users/omniauth_callbacks"
  }
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
 
   resources :relationships, only: [:create, :destroy]
 
   resources :conversations do
-    resources :messages
+    resources :messages, only: [:index, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

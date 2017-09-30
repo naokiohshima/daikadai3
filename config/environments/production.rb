@@ -79,10 +79,12 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: '13.115.21.157' }
   ActionMailer::Base.delivery_method = :smtp
+  email = ENV['EMAIL_HIDDEN']
+  pass = ENV['PASSWORD_HIDDEN']
   ActionMailer::Base.smtp_settings =
   {
-   user_name: ENV['EMAIL_HIDDEN'],
-   password: ENV['PASSWORD_HIDDEN'],
+   user_name: email,
+   password: pass,
    address: "smtp.gmail.com",
    port: 587,
    authentication: :plain,

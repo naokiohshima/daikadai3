@@ -7,6 +7,7 @@
                password: password,
                password_confirmation: password,
                uid: uid,
-               provider: provider
-               )
+               provider: provider,
+               avatar: File.open("./public/l_e_others_500.png")  
+             )
 end

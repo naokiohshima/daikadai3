@@ -1,4 +1,4 @@
-2.times do |n|
+100.times do |n|
   email = Faker::Internet.email
   uid = Faker::Commerce.department
   provider = Faker::Internet.email

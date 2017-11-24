@@ -5,10 +5,12 @@
   password = "password"
   title = "title"
   content = "content"
+  name = "test"
   user = User.create!(email: email,
                password: password,
                password_confirmation: password,
                uid: uid,
+               name: name,
                provider: provider,
                avatar: File.open("./public/l_e_others_500.png")
              )
